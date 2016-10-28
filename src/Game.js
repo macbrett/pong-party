@@ -18,7 +18,7 @@ constructor(){
     this.p2 = new Paddle(this.height,this.width -10,'white', player2Keys)
 
 
-    this.ball = new Ball(5,5);
+    this.ball = new Ball(this.x, this.y);
 
 
   }
