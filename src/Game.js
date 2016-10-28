@@ -47,7 +47,7 @@ render() {
       this.drawBoard(this.context)
       this.p1.render(this.context)
       this.p2.render(this.context)
-      this.ball.render(this.context,this.player1, this.player2)
+      this.ball.render(this.context,this.p1, this.p2)
 
 }
 
