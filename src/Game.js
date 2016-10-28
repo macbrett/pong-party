@@ -13,11 +13,12 @@ constructor(){
     this.context  = canvas.getContext('2d');
     this.context.fillStyle = "white";
 
+
     this.p1 = new Paddle(this.height, 5, 'white', player1Keys)
     this.p2 = new Paddle(this.height,this.width -10,'white', player2Keys)
 
 
-    this.ball = new Ball();
+    this.ball = new Ball(5,5);
 
 
   }
