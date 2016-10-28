@@ -1,19 +1,24 @@
-/*export default class Ball {
-constructor(x,y,speed){
-  this.x = 150
+export default class Ball {
+constructor(x,y,vx,vy){
+  this.x = 50
   this.y = 50
-  this.vx = 1
-  this.vy = 1
-  this.speed = 5
+  this.vx = 10
+  this.vy = 10
+  this.width = 25;
+    this.height = 25;
+  /*this.speed = 5*/
   }
-}
+
 
 render(context){
-context.fillStyle = this.color
+context.fillStyle = "red"
     context.fillRect(
       this.x,
       this.y,
       this.width,
       this.height
 
+
+)
+}
 }

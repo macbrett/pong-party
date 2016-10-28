@@ -1,5 +1,5 @@
 
-export default class player1Keys{
+/*export default class player1Keys{
 
 
 const player1Keys = {
@@ -14,4 +14,4 @@ const player2Keys = {
   up:38,
   down:40,
 }
-}
+}*/

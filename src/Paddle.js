@@ -16,10 +16,11 @@ export default class Paddle{
 }
   keyListener(event){
     switch(event.keyCode){
-      case this.keys.up:
+      case 'this.keys.up':
+      console.log("hello")
       this.moveUp()
       break;
-      case this.keys.down:
+      case 'this.keys.down':
       this.moveDown()
       break;
       default:return
@@ -28,8 +29,7 @@ export default class Paddle{
   }
   wallBounce(){
 
-
-  }
+}
 
   moveUp(){
     if(this.y>=5){
