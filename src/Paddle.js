@@ -9,6 +9,7 @@ export default class Paddle{
     this.color = color;
     this.keys = keys;
     this.speed = 5
+
     this.boardHeight = boardHeight;
     document.addEventListener('keydown', event => this.keyListener(event));
 

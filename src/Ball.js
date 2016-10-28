@@ -1,8 +1,8 @@
 export default class Ball {
 constructor(){
 
-
-
+  //this.player1 = player1
+  //this.player2 = player2
   this.width = 50;
   this.height = 50;
   this.ySpeed = Math.floor(Math.random() *12 - 6) //y direction
@@ -24,45 +24,10 @@ constructor(){
 
 
 
- /*paddleCollision() {
 
-
-
-      const inRightEnd = player2.x <= this.x + this.width &&
-      player2.x > this.x - this.vx + this.width;
-      if (inRightEnd) {
-         const collisionDiff = this.x + this.width - player2.x;
-         const k = collisionDiff / this.vx;
-         const y = this.vy * k + (this.y - this.vy);
-         const hitRightPaddle = y >= player2.y && y + this.height <=
-         player2.y + player2.height;
-         if (hitRightPaddle) {
-            this.x = player2.x - this.width;
-            this.y = Math.floor(this.y - this.vy + this.vy * k);
-            this.vx = -this.vx;
-}
-}
-   } else {
-      const inLeftEnd = player1.x + player1.width >= this.x;
-      if (inLeftEnd) {
-         const collisionDiff = player1.x + player1.width - this.x;
-         const k = collisionDiff / -this.vx;
-         const y = this.vy * k + (this.y - this.vy);
-         const hitLeftPaddle = y >= player1.y && y + this.height <=
-         player1.y + player1.height;
-         if (hitLeftPaddle) {
-            this.x = player1.x + player1.width;
-            this.y = Math.floor(this.y - this.vy + this.vy * k);
-            this.vx = -this.vx;
-         }
-      }
-    }
-}
-
-*/
 
 paddleCollision(player1, player2){
-  console.log(`x: ${this.x}, player2.x: ${player2.x}`)
+
   if (
     this.x - this.radius <= player1.x + player1.width &&
     this.y <= player1.y + player1.height &&
@@ -100,29 +65,31 @@ this.xSpeed *= -1
 
 
 
-goalRight(){
+goalRight(player1){
 
-if (this.x >=290){
+if (this.x >=300){
+const score = 0;
 
-console.log("player 1 goal")
-this.reset()
+player1.score++
 
-
-/*this.vx = (-7 - Math.abs(this.vy))*/
 }
 }
 
-goalLeft(){
+goalLeft(player2){
 
+const score = 0
 if (this.x <=0){
 
-console.log("player 2 goal")
-this.reset()
+player2.score++
+
+
+}
+}
 
 /*this.vx = (-7 - Math.abs(this.vy))*/
 
-}
-}
+
+
 
 
 
@@ -139,8 +106,8 @@ render(context, player1, player2){
      this.paddleCollision(player1, player2);
     this.bounce()
 
-    this.goalRight()
-    this.goalLeft()
+    this.goalRight(player1)
+    this.goalLeft(player2)
 
 //this.reset()
 
