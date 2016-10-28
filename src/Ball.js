@@ -1,7 +1,5 @@
 export default class Ball {
 constructor(boardWidth,boardHeight){
-
-
   this.x = 50
   this.y = 50
   this.vx = 1
@@ -13,13 +11,14 @@ constructor(boardWidth,boardHeight){
 
 
   }
-/*draw(context){
+draw(context){
+    context.fillStyle = 'white';
+    context.beginPath();
+    context.arc(this.x, this.y, 5, 0, 2 * Math.PI);
+    context.fill();
+    context.closePath();
 
-       context.arc(100, 100, 5, 0, Math.PI*2, true);
-       context.fillStyle = 'green';
-       context.beginPath();
-       context.fill();
-   }*/
+   }
 
 
 moveBall(){
@@ -29,14 +28,10 @@ this.y = this.y + 5
 }
 
 render(context){
-context.fillStyle = "red"
-    context.fillRect(
-      this.x,
-      this.y,
-      this.width,
-      this.height)
 
-this.moveBall()
+    this.draw(context)
+    this.moveBall()
+
 
 
 
