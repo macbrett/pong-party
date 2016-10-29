@@ -73,21 +73,23 @@ this.reset()
   }
 }
 
-playerOneScores(){
+playerOneScores(player1score){
 
 
 if (this.x >=290){
 this.player1score++
-console.log(this.player1score)
-
+document.getElementById("p1score").innerHTML = this.player1score
+let hi = document.getElementById("p1score").innerHTML;
   }
 }
 
-playerTwoScores(){
+playerTwoScores(player2score){
 
 if (this.x <=10){
   this.player2score++
-console.log(this.player2score)
+document.getElementById("p2score").innerHTML = this.player2score
+let hi = document.getElementById("p2score").innerHTML;
+
   }
 }
 
@@ -98,15 +100,15 @@ this.y += this.ySpeed
 
 }
 
-render(context, player1, player2){
+render(context, player1, player2, player1score, player2score){
 
     this.draw(context)
      this.paddleCollision(player1, player2);
     this.bounce()
      this.goalRight()
     this.goalLeft()
-    this.playerOneScores()
-    this.playerTwoScores()
+    this.playerOneScores(player1score)
+    this.playerTwoScores(player2score)
 
 this.moveBall()
 

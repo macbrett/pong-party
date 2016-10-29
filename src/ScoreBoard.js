@@ -4,11 +4,10 @@
 export default class ScoreBoard {
 
 
-   constructor(player1, player2) {
+   constructor(player1score, player2score) {
      this.x = 20
      this.y = 20
-      this.player1score = 0
-      this.player2score = 0
+
    }
 
 

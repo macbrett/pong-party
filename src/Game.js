@@ -24,8 +24,8 @@ constructor(){
 
     this.ball = new Ball(this.x, this.y);
 
-    this.player1score = new ScoreBoard(this.score)
-    this.player2score = new ScoreBoard(this.score)
+    this.player1score = new ScoreBoard()
+    this.player2score = new ScoreBoard()
 
   }
 
@@ -54,8 +54,8 @@ render() {
       this.p1.render(this.context)
       this.p2.render(this.context)
       this.ball.render(this.context,this.p1, this.p2)
-      this.player1score.render(this.context)
-      this.player2score.render(this.context)
+      this.player1score.render(this.context,this.player1score)
+      this.player2score.render(this.context,this.player2score)
 
 }
 
