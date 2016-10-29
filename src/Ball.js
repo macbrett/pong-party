@@ -30,12 +30,17 @@ paddleCollision(player1, player2){
   ){
   this.xSpeed *= -1
 
+  var audio = new Audio('sounds/good.wav');
+  audio.play();
+
 } else if (
     this.x + this.radius >= player2.x &&
     this.y <= player2.y + player2.height &&
     this.y >= player2.y
   ){
     this.xSpeed *= -1
+     var audio = new Audio('sounds/good.wav');
+  audio.play();
   }
 }
 
