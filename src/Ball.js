@@ -30,7 +30,7 @@ paddleCollision(player1, player2){
   ){
   this.xSpeed *= -1
 
-  var audio = new Audio('sounds/good.wav');
+  var audio = new Audio('sounds/trump.mp3');
   audio.play();
 
 } else if (
@@ -39,7 +39,7 @@ paddleCollision(player1, player2){
     this.y >= player2.y
   ){
     this.xSpeed *= -1
-     var audio = new Audio('sounds/good.wav');
+     var audio = new Audio('sounds/trump.mp3');
   audio.play();
   }
 }
@@ -56,10 +56,14 @@ draw(context){
 bounce(){
 if (this.y <=0  || this.y >=150 - this.radius){
   this.ySpeed *= -1
+   var audio = new Audio('sounds/pong-01.wav');
+  audio.play();
 }
 
 if (this.x <=0 || this.x>=300 - this.radius){
 this.xSpeed *= -1
+ var audio = new Audio('sounds/pong-01.wav');
+  audio.play();
   }
 }
 
@@ -85,6 +89,9 @@ if (this.x >=290){
 this.player1score++
 document.getElementById("p1score").innerHTML = this.player1score
 let hi = document.getElementById("p1score").innerHTML;
+    var audio = new Audio('sounds/good.wav');
+  audio.play();
+
   }
 }
 
@@ -94,6 +101,8 @@ if (this.x <=10){
   this.player2score++
 document.getElementById("p2score").innerHTML = this.player2score
 let hi = document.getElementById("p2score").innerHTML;
+    var audio = new Audio('sounds/good.wav');
+  audio.play();
 
   }
 }
