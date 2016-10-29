@@ -8,6 +8,8 @@ constructor(){
   this.ySpeed = Math.floor(Math.random() *12 - 6) //y direction
   this.xSpeed = (7 - Math.abs(this.ySpeed))// x direction
   this.radius = 5
+  this.player1score = 0
+  this.player2score = 0
   this.reset();
 
 
@@ -71,6 +73,23 @@ this.reset()
   }
 }
 
+playerOneScores(){
+
+
+if (this.x >=290){
+this.player1score++
+console.log(this.player1score)
+
+  }
+}
+
+playerTwoScores(){
+
+if (this.x <=10){
+  this.player2score++
+console.log(this.player2score)
+  }
+}
 
 
 moveBall(){
@@ -86,13 +105,10 @@ render(context, player1, player2){
     this.bounce()
      this.goalRight()
     this.goalLeft()
+    this.playerOneScores()
+    this.playerTwoScores()
 
-
-
-
-
-/*this.scored()*/
-    this.moveBall()
+this.moveBall()
 
 }
 }
