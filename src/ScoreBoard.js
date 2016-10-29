@@ -5,7 +5,7 @@ export default class ScoreBoard {
 
 
    constructor(player1score, player2score) {
-     this.x = 20
+     this.x = 30
      this.y = 20
 
    }
@@ -16,9 +16,9 @@ export default class ScoreBoard {
 
    draw(context) {
       context.fillStyle = 'red';
-      context.font = "20px Helvetica";
-      context.fillText("Player 1: " + this.player1score, this.x, this.y);
-      context.fillText("Player 2: " + this.player2score, this.x + 160, this.y);
+      context.font = "14px Helvetica";
+      context.fillText("Player 1 " , this.x, this.y);
+      context.fillText("Player 2 " , this.x + 180, this.y);
    }
 
 
