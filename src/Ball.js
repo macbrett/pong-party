@@ -11,20 +11,13 @@ constructor(){
   this.reset();
 
 
-
-
-
-  }
-
-    reset() {
-  this.x = 150
-  this.y = 75
-
 }
 
+reset() {
+this.x = 150
+this.y = 75
 
-
-
+}
 
 paddleCollision(player1, player2){
 
@@ -60,37 +53,23 @@ if (this.y <=0  || this.y >=150 - this.radius){
 
 if (this.x <=0 || this.x>=300 - this.radius){
 this.xSpeed *= -1
-}
-}
-
-
-
-goalRight(player1){
-
-if (this.x >=300){
-const score = 0;
-
-player1.score++
-
-}
+  }
 }
 
-goalLeft(player2){
+goalRight(){
+if (this.x >=295){
 
-const score = 0
-if (this.x <=0){
-
-player2.score++
-
-
-}
+this.reset()
+  }
 }
 
-/*this.vx = (-7 - Math.abs(this.vy))*/
+goalLeft(){
+if (this.x <=2){
 
+this.reset()
 
-
-
+  }
+}
 
 
 
@@ -105,19 +84,15 @@ render(context, player1, player2){
     this.draw(context)
      this.paddleCollision(player1, player2);
     this.bounce()
+     this.goalRight()
+    this.goalLeft()
 
-    this.goalRight(player1)
-    this.goalLeft(player2)
 
-//this.reset()
+
+
 
 /*this.scored()*/
     this.moveBall()
-
-
-
-
-
 
 }
 }

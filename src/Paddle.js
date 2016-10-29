@@ -9,14 +9,13 @@ export default class Paddle{
     this.color = color;
     this.keys = keys;
     this.speed = 5
-
     this.boardHeight = boardHeight;
     document.addEventListener('keydown', event => this.keyListener(event));
 
 
-
-
 }
+
+
   keyListener(event){
 
     switch(event.keyCode){
@@ -30,9 +29,24 @@ export default class Paddle{
     }
 
   }
-  wallBounce(){
 
+/*player1Score(){
+const sum = 0
+if (this.x >=300){
+const sum = sum + 1
+console.log("hello")
 }
+}
+
+
+
+player2Score(){
+const sum = 0
+if (this.x <= 0){
+const sum = sum + 1
+console.log("hi")
+}
+}*/
 
   moveUp(){
     if(this.y - this.speed>=8){
