@@ -16,11 +16,11 @@ Webpack is used as the js file bundler. It allows one to split the code into mul
 
 The src files are:
 
-index.js
-Ball.js
-Game.js
-Paddle.js
-ScoreBoard.js
+index.js,
+Ball.js,
+Game.js,
+Paddle.js,
+ScoreBoard.js,
 keys.js
 
 Pong-Party ustilizes the HTML canvas element, which is used to draw graphics on the fly, via JavaScript. The <canvas> element is only a container for graphics. JavaScript is used to actually draw the graphics.
@@ -36,11 +36,11 @@ SAMPLE CODE
 import Paddle from './Paddle' // this imports the module into a larger js file
 
 export default class Game {   // this exports the module to a larger js file
-constructor(){
+constructor()
 
 SCREENSHOT
 
-![image](https://{cloud.githubusercontent.com/assets/20735216/19837975/4070382c-9e82-11e6-9f88-5792085})
+![image](https://{cloud.githubusercontent.com/assets/20735216/19837975/4070382c-9e82-11e6-9f88-5792085.png})
 
 
 
