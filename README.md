@@ -40,7 +40,7 @@ constructor()
 
 SCREENSHOT
 
-![image](https://{cloud.githubusercontent.com/assets/20735216/19837975/4070382c-9e82-11e6-9f88-5792085.png})
+![image](https://{https://github.com/macbrett/pong-party/blob/master/screenshot/pong-party.png?raw=true})
 
 
 
