@@ -30,19 +30,19 @@ export default class Paddle{
 
   }
 
-
-
   moveUp(){
     if(this.y - this.speed>=0){
 
       this.y -=this.speed
     }
   }
+
   moveDown(){
     if(this.y + this.height -this.speed<=this.boardHeight-10){
       this.y +=this.speed
     }
   }
+  
   render(context){
 
     context.fillStyle = this.color

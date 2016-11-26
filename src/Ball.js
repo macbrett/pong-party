@@ -5,7 +5,7 @@ constructor(){
   //this.player2 = player2
   this.width = 50;
   this.height = 50;
-  this.ySpeed = Math.floor(Math.random() *12 - 3) //y direction
+  this.ySpeed = Math.floor(Math.random() *6 - 3) //y direction
   this.xSpeed = (3 - Math.abs(this.ySpeed))// x direction
   this.radius = 5
   this.player1score = 0
@@ -25,14 +25,15 @@ paddleCollision(player1, player2){
   if (
     this.x - this.radius <= player1.x + player1.width &&
     this.y <= player1.y + player1.height &&
-    this.y >= player1.y
+    this.y >= player1.y 
+    
             ){
               this.xSpeed *= -1
               var audio = new Audio('sounds/trump.mp3');
               audio.play();
 
   } else if (
-    this.x + this.radius >= player2.x + player2.width &&
+    this.x + this.radius >= player2.x &&
     this.y <= player2.y + player2.height &&
     this.y >= player2.y
             ){
@@ -62,38 +63,38 @@ bounce(){
 }
 
 goalRight(){
-if (this.x >=301){
-  this.reset()
+if (this.x >=295){
+   this.reset()
   }
 }
 
 goalLeft(){
-if (this.x <=0){
+if (this.x <=-1){
   this.reset()
   }
 }
 
 playerOneScores(player1score){
 
-if (this.x >=300){
+if (this.x >=294){
 this.player1score++
 document.getElementById("p1score").innerHTML = this.player1score
 let hi = document.getElementById("p1score").innerHTML;
     var audio = new Audio('sounds/good.wav');
   audio.play();
-
+this.reset()
   }
 }
 
 playerTwoScores(player2score){
 
-if (this.x <=3){
+if (this.x <=0){
   this.player2score++
 document.getElementById("p2score").innerHTML = this.player2score
 let hi = document.getElementById("p2score").innerHTML;
     var audio = new Audio('sounds/good.wav');
   audio.play();
-
+this.reset()
   }
 }
 
