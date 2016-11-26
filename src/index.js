@@ -1,7 +1,7 @@
 import './game.css';
-import Game from './Game'
+import game from './game'
 
-var game = new Game();
+var game = new game();
 
 const fps = 30;
 

@@ -1,5 +1,5 @@
 
-export default class Paddle{
+export default class paddle{
 
   constructor(boardHeight, x, color, keys){
     this.width = 5;
@@ -30,23 +30,7 @@ export default class Paddle{
 
   }
 
-/*player1Score(){
-const sum = 0
-if (this.x >=300){
-const sum = sum + 1
-console.log("hello")
-}
-}
 
-
-
-player2Score(){
-const sum = 0
-if (this.x <= 0){
-const sum = sum + 1
-console.log("hi")
-}
-}*/
 
   moveUp(){
     if(this.y - this.speed>=8){

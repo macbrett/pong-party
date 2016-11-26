@@ -1,13 +1,13 @@
-import Paddle from './Paddle'
+import paddle from './paddle'
 import {player1Keys, player2Keys} from './keys'
-import Ball from './Ball'
-import ScoreBoard from './ScoreBoard'
+import ball from './ball'
+import scoreboard from './scoreboard'
 
 
 
 const gap = 10
 
-export default class Game {
+export default class game {
 constructor(){
 
     const canvas = document.getElementById('game')
@@ -18,14 +18,14 @@ constructor(){
     this.context.fillStyle = "white";
 
 
-    this.p1 = new Paddle(this.height, 5, 'white', player1Keys)
-    this.p2 = new Paddle(this.height, this.width -10,'white', player2Keys)
+    this.p1 = new paddle(this.height, 5, 'white', player1Keys)
+    this.p2 = new paddle(this.height, this.width -10,'white', player2Keys)
 
 
     this.ball = new Ball(this.x, this.y);
 
-    this.player1score = new ScoreBoard()
-    this.player2score = new ScoreBoard()
+    this.player1score = new scoreboard()
+    this.player2score = new scoreboard()
 
   }
 
