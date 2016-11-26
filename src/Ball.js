@@ -13,29 +13,28 @@ constructor(){
   this.reset();
 
 }
-
-reset() {
-this.x = 150
-this.y = 75
+  reset() {
+  this.x = 150
+  this.y = 75
 
 }
 
-paddleCollision(player1, player2){
+  paddleCollision(player1, player2){
 
-  if (
-    this.x - this.radius <= player1.x + player1.width &&
-    this.y <= player1.y + player1.height &&
-    this.y >= player1.y 
+    if (
+      this.x - this.radius <= player1.x + player1.width &&
+      this.y <= player1.y + player1.height &&
+      this.y >= player1.y 
     
             ){
               this.xSpeed *= -1
               var audio = new Audio('sounds/trump.mp3');
               audio.play();
 
-  } else if (
-    this.x + this.radius >= player2.x &&
-    this.y <= player2.y + player2.height &&
-    this.y >= player2.y
+    } else if (
+      this.x + this.radius >= player2.x &&
+      this.y <= player2.y + player2.height &&
+      this.y >= player2.y
             ){
               this.xSpeed *= -1
               var audio = new Audio('sounds/trump.mp3');
@@ -43,46 +42,45 @@ paddleCollision(player1, player2){
               }
 }
 
-draw(context){
-    context.fillStyle = 'white';
-    context.beginPath();
-    context.arc(this.x, this.y, 5, 0, 2 * Math.PI);
-    context.fill();
-    context.closePath();
+  draw(context){
+      context.fillStyle = 'white';
+      context.beginPath();
+      context.arc(this.x, this.y, 5, 0, 2 * Math.PI);
+      context.fill();
+      context.closePath();
 
    }
 
-bounce(){
-  if (this.y <=0  || this.y >=150 - this.radius){
+  bounce(){
+    if (this.y <=0  || this.y >=150 - this.radius){
       this.ySpeed *= -1
       var audio = new Audio('sounds/pong-01.wav');
       audio.play();
     }
 
-
 }
 
-goalRight(){
-if (this.x >=295){
-   this.reset()
+  goalRight(){
+    if (this.x >=295){
+    this.reset()
   }
 }
 
-goalLeft(){
-if (this.x <=-1){
-  this.reset()
+  goalLeft(){
+    if (this.x <=-1){
+    this.reset()
   }
 }
 
-playerOneScores(player1score){
+  playerOneScores(player1score){
 
-if (this.x >=294){
-this.player1score++
-document.getElementById("p1score").innerHTML = this.player1score
-let hi = document.getElementById("p1score").innerHTML;
+  if (this.x >=294){
+    this.player1score++
+    document.getElementById("p1score").innerHTML = this.player1score
+    let hi = document.getElementById("p1score").innerHTML;
     var audio = new Audio('sounds/good.wav');
-  audio.play();
-this.reset()
+    audio.play();
+    
   }
 }
 
@@ -94,18 +92,18 @@ document.getElementById("p2score").innerHTML = this.player2score
 let hi = document.getElementById("p2score").innerHTML;
     var audio = new Audio('sounds/good.wav');
   audio.play();
-this.reset()
+
   }
 }
 
 
-moveBall(){
-this.x += this.xSpeed
-this.y += this.ySpeed
+  moveBall(){
+    this.x += this.xSpeed
+    this.y += this.ySpeed
 
 }
 
-render(context, player1, player2, player1score, player2score){
+  render(context, player1, player2, player1score, player2score){
 
     this.draw(context)
     this.paddleCollision(player1, player2);
