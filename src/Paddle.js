@@ -1,9 +1,9 @@
 
-export default class paddle{
+export default class Paddle{
 
   constructor(boardHeight, x, color, keys){
     this.width = 5;
-    this.height = 50;
+    this.height = 60;
     this.x = x;
     this.y = (boardHeight / 2) - (this.height / 2);
     this.color = color;
@@ -33,13 +33,13 @@ export default class paddle{
 
 
   moveUp(){
-    if(this.y - this.speed>=8){
+    if(this.y - this.speed>=0){
 
       this.y -=this.speed
     }
   }
   moveDown(){
-    if(this.y + this.height -this.speed<=this.boardHeight){
+    if(this.y + this.height -this.speed<=this.boardHeight-10){
       this.y +=this.speed
     }
   }

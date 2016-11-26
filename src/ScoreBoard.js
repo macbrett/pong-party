@@ -1,7 +1,7 @@
 
 
 
-export default class ScoreBoard {
+export default class Scoreboard {
 
 
    constructor(player1score, player2score) {

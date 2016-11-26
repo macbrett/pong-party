@@ -1,4 +1,4 @@
-export default class ball {
+export default class Ball {
 constructor(){
 
   //this.player1 = player1
@@ -32,7 +32,7 @@ paddleCollision(player1, player2){
               audio.play();
 
   } else if (
-    this.x + this.radius >= player2.x &&
+    this.x + this.radius >= player2.x + player2.width &&
     this.y <= player2.y + player2.height &&
     this.y >= player2.y
             ){
@@ -58,28 +58,24 @@ bounce(){
       audio.play();
     }
 
-  if (this.x <=0 || this.x>=300 - this.radius){
-      this.xSpeed *= -1
-      var audio = new Audio('sounds/pong-01.wav');
-      audio.play();
-    }
+
 }
 
 goalRight(){
-if (this.x >=295){
+if (this.x >=301){
   this.reset()
   }
 }
 
 goalLeft(){
-if (this.x <=2){
+if (this.x <=0){
   this.reset()
   }
 }
 
 playerOneScores(player1score){
 
-if (this.x >=290){
+if (this.x >=300){
 this.player1score++
 document.getElementById("p1score").innerHTML = this.player1score
 let hi = document.getElementById("p1score").innerHTML;
@@ -91,7 +87,7 @@ let hi = document.getElementById("p1score").innerHTML;
 
 playerTwoScores(player2score){
 
-if (this.x <=10){
+if (this.x <=3){
   this.player2score++
 document.getElementById("p2score").innerHTML = this.player2score
 let hi = document.getElementById("p2score").innerHTML;
